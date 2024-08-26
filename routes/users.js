@@ -12,7 +12,7 @@ router.post("/Create", async (req, res) => {
     const data = req.body;
     db.getConnection((err,conntion)=>{
       if(err) throw err
-      conntion.query('INSERT INTO users set ?',[data],(err,rows)=>{0
+      conntion.query('INSERT INTO users set ?',[data],(err,rows)=>{
         conntion.release()
         if(!err){
           console.log("good",rows);
